@@ -1,0 +1,40 @@
+﻿<Window x:Class="GoogleQueryExporter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoogleQueryExporter"
+        mc:Ignorable="d"
+        Title="Google Ads Query Exporter" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Label Content="Id Customer:" VerticalAlignment="Center"/>
+            <TextBox x:Name="TextBoxCustomer" Width="150" Height="30" Margin="20,0" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <GroupBox Grid.Row="1" Grid.Column="1"  Header="Exaples">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Yesterday's Campaigns" Click="ExampleYesterdayCampaign" Width="130" Margin="30,0" Cursor="Hand"/>
+                <Button Content="Last 7 Days Call Views" Click="ExampleCallView" Width="130" Margin="30,0" Cursor="Hand"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <TextBox  Grid.Row="1" Grid.RowSpan="2"  x:Name="TextBoxQuery" Width="300" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="EXECUTE QUERY" VerticalAlignment="Center" Width="150" Height="30" Cursor="Hand" Click="ExecuteCsvClick"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
+            <TextBlock><Hyperlink NavigateUri="https://developers.google.com/google-ads/api/fields/v11/overview_query_builder">Query Builder</Hyperlink></TextBlock>
+            <TextBlock Margin="150,0"><Hyperlink NavigateUri="https://developers.google.com/google-ads/api/fields/v11/query_validator">Query Validator</Hyperlink></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
